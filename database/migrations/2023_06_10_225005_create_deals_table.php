@@ -4,7 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 class CreateDealsTable extends Migration
 {
     public function up()
@@ -24,8 +23,8 @@ class CreateDealsTable extends Migration
             $table->string('steamRatingPercent', 255)->nullable();
             $table->string('steamRatingCount', 255)->nullable();
             $table->string('steamAppID', 255)->nullable();
-            $table->integer('releaseDate')->nullable();
-            $table->integer('lastChange')->nullable();
+            $table->bigInteger('releaseDate')->nullable();
+            $table->bigInteger('lastChange')->nullable();
             $table->string('dealRating', 255)->nullable();
             $table->string('internalName', 255)->nullable();
             $table->string('metacriticLink', 255)->nullable();

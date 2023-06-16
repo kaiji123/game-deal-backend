@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class UserDeal extends Model
 {
+    use HasFactory;
     protected $table = 'user_deals'; // Specify the table name
 
     protected $fillable = [

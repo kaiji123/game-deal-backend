@@ -84,12 +84,10 @@ class DashboardController extends Controller
 
 
             $userId = Auth::id();
-            info($userId);
 
             $existingUserDeal = UserDeal::where('user_id', $userId)
             ->where('deal_id', $deal->dealID)
             ->first();
-
             if ($existingUserDeal) {
                 return response()->json(['message' => 'UserDeal already exists'], 409);
             }
@@ -118,16 +116,13 @@ class DashboardController extends Controller
 
     public function delete($dealID)
     {   
-        info("hello");
-        $decodedDealId = urldecode($dealID);
-        info($decodedDealId);
+ 
+
         $userID = Auth::id();
-        info($userID);
+
         $userDeal = UserDeal::where('deal_id', $dealID)
             ->where('user_id', $userID)
             ->first();
-
-        info($userDeal);
     
         if (!$userDeal) {
             return response()->json(['message' => 'UserDeal not found'], 404);
